@@ -1,15 +1,15 @@
 Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
-Version:	1.3.1
+Version:	1.3.2
 Release:	1
 License:	LGPL
 Group:		Libraries
-Group(fr):	Development/Librairies
+Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://dark.x.dtu.dk/~mbn/clanlib/download/%{name}-%{version}.tar.gz
-Patch0:		Hermes-DESTDIR.patch
-Patch1:		Hermes-automake.patch
+Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-automake.patch
 URL:		http://hermes.terminal.at/
 BuildRequires:	automake
 BuildRequires:	autoconf
