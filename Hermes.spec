@@ -71,16 +71,13 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a
-LDFLAGS="-s"; export LDFLAGS
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install-strip DESTDIR=$RPM_BUILD_ROOT
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog TODO TODO.conversion README FAQ
 
