@@ -1,0 +1,24 @@
+diff -Nru Hermes-1.2.5/src/Makefile.am Hermes-1.2.5.new/src/Makefile.am
+--- Hermes-1.2.5/src/Makefile.am	Fri May 21 03:10:34 1999
++++ Hermes-1.2.5.new/src/Makefile.am	Thu Jul  1 05:20:46 1999
+@@ -25,16 +25,16 @@
+ ##	cp $@ `echo $@ | sed -e 's/\.lo$$/.o/'`
+ 
+ install-data-local:
+-	$(INSTALL) -m 0755 -d $(includedir)/Hermes
++	$(INSTALL) -m 0755 -d $(DESTDIR)$(includedir)/Hermes
+ 	for incfile in $(publicheaders); do \
+-	  $(INSTALL) -m 0644 $$incfile $(includedir)/Hermes; \
++	  $(INSTALL) -m 0644 $$incfile $(DESTDIR)$(includedir)/Hermes; \
+ 	done
+ 
+ uninstall-local:
+-	for incfile in $(publicheaders); do \
++	for incfile in $(DESTDIR)$(publicheaders); do \
+ 	  rm -f $(includedir)/Hermes/$$incfile; \
+ 	done
+-	rmdir $(includedir)/Hermes
++	rmdir $(DESTDIR)$(includedir)/Hermes
+ 
+ libHermes.la: $(libHermes_la_OBJECTS) $(libHermes_la_DEPENDENCIES)
+ 	$(LINK) -rpath $(libdir) $(libHermes_la_LDFLAGS) \
