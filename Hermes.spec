@@ -14,7 +14,7 @@ URL:		http://hermes.terminal.at/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 HERMES is a library designed to convert a source buffer with a specified
