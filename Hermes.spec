@@ -24,7 +24,7 @@ surface clearing, stretching and some dithering.
 
 %description -l pl
 HERMES jest bibliotek± do konwersji miêdzy ró¿nymi formatami buforów
-pixeli z maksymaln± mo¿liw± szybkosci±. Na procesorach x86 z
+pixeli z maksymaln± mo¿liw± szybko¶ci±. Na procesorach x86 z
 architektur± MMX wstawki assemblerowe umo¿liwiaj± bibliotece du¿±
 szybko¶æ dzia³ania. HERMES umo¿liwia wype³nianie powierzchni,
 skalowanie i czê¶ciowo dithering.
