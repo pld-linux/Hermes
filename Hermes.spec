@@ -66,7 +66,7 @@ Biblioteka statyczna HERMES.
 %setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS -g"; export CFLAGS
+CFLAGS="$RPM_OPT_FLAGS"; export CFLAGS
 %configure \
 	--prefix=%{_prefix}
 make
