@@ -39,7 +39,7 @@ Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
 
 %description devel
-Header files and docementation for develp applications using HERMES
+Header files and documentation for developing applications using HERMES
 library.
 
 %description -l pl devel
