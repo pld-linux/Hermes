@@ -2,11 +2,12 @@ Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji formatów pixeli
 Name:		Hermes
 Version:	1.2.5
-Release:	1
+Release:	2
 Copyright:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
 Source:		http://hermes.terminal.at/Hermes-%{version}.tar.gz
+Patch:		Hermes-DESTDIR.patch
 URL:		http://hermes.terminal.at/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -64,18 +65,18 @@ Biblioteka statyczna HERMES.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS"; export CFLAGS
-%configure \
-	--prefix=%{_prefix}
+LDFLAGS="-s"; export LDFLAGS
+%GNUconfigure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix="$RPM_BUILD_ROOT%{_prefix}" install-strip
+make install-strip DESTDIR=$RPM_BUILD_ROOT
 
-strip $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf AUTHORS CHANGES TODO TODO.conversion
 
@@ -94,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *gz docs/api
 %{_includedir}/Hermes
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/libHermes.la
+%attr(755,root,root) %{_libdir}/lib*.la
 
 %files static
 %defattr(644,root,root,755)
