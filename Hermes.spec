@@ -6,8 +6,9 @@ Release:	1
 Copyright:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
-Source:		http://hermes.terminal.at/Hermes-%{version}.tar.gz
-Patch:		Hermes-DESTDIR.patch
+Source:		http://hermes.terminal.at/files/Hermes-%{version}-2.tar.gz
+Patch0:		Hermes-DESTDIR.patch
+Patch1:		Hermes-automake.patch
 URL:		http://hermes.terminal.at/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -64,16 +65,22 @@ HERMES static library.
 Biblioteka statyczna HERMES.
 
 %prep
-%setup -q
-%patch -p1
+%setup  -q
+%patch0 -p1
+%patch1 -p1
 
 %build
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a
 LDFLAGS="-s"; export LDFLAGS
-%GNUconfigure
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 make install-strip DESTDIR=$RPM_BUILD_ROOT
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
