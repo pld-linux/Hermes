@@ -10,3 +10,25 @@
  
  dnl ---------------------------------------------------------------------
  dnl Check for command line arguments
+--- Hermes-1.3.2/src/Makefile.am.wiget	Thu Jan 23 20:25:36 2003
++++ Hermes-1.3.2/src/Makefile.am	Thu Jan 23 20:25:50 2003
+@@ -25,11 +25,6 @@
+ ##	nasm -o $@ -f elf $<
+ ##	cp $@ `echo $@ | sed -e 's/\.lo$$/.o/'`
+ 
+-SUFFIXES = .S
+-
+-.S.lo:
+-	gcc -c -o $@ $<
+-	cp $@ `echo $@ | sed -e 's/\.lo$$/.o/'`
+ 
+ install-data-local:
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(includedir)/Hermes
+@@ -42,7 +37,3 @@
+ 	  rm -f $(includedir)/Hermes/$$incfile; \
+ 	done
+ 	rmdir $(DESTDIR)$(includedir)/Hermes
+-
+-libHermes.la: $(libHermes_la_OBJECTS) $(libHermes_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libHermes_la_LDFLAGS) \
+-	$(libHermes_la_OBJECTS) $(libHermes_la_LIBADD) $(LIBS)

@@ -14,7 +14,7 @@ diff -Nru Hermes-1.2.5/src/Makefile.am Hermes-1.2.5.new/src/Makefile.am
  
  uninstall-local:
 -	for incfile in $(publicheaders); do \
-+	for incfile in $(DESTDIR)$(publicheaders); do \
++	for incfile in $(publicheaders); do \
  	  rm -f $(includedir)/Hermes/$$incfile; \
  	done
 -	rmdir $(includedir)/Hermes
