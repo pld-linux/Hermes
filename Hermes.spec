@@ -26,12 +26,12 @@ Win32 (Visual C), Linux, FreeBSD (IRIX, Solaris are on hold at the moment)
 
 %description -l pl
 HERMES jest bibliotek± do konwersji miêdzy ró¿nymi formatami buforów
-pixeli z maksymaln± mozliw± szubkosci±.
+pixeli z maksymaln± mo¿liw± szybkosci±.
 
 Na procesorach x86 z architektur± MMX, procedury assemblerowe umo¿liwiaj±
 bibliotece du¿± szybko¶æ dzia³ania.
 
-HERMES umozliwia wype³nianie powierzchni, skalowanie i czê¶ciowo dithering.
+HERMES umo¿liwia wype³nianie powierzchni, skalowanie i czê¶ciowo dithering.
 HERMES mo¿e dzia³aæ na wszystkich platformach na które dostêpny jest
 kompilator ANSI C, w tej chwili kod dostêpny jest dla DOS, Win32, Linux
 FreeBSD.
@@ -51,14 +51,14 @@ Pliki nag³ówkowe i dokumentacja potrzebne przy tworzeniu aplikacji
 u¿ywaj±cych biblioteki HERMES.
 
 %package static
-Summary:	HERMES satic library
+Summary:	HERMES static library
 Summary(pl):	Biblioteka statyczna HERMES
 Group:		Development/Libraries
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
 
 %description static
-HERMES satic library.
+HERMES static library.
 
 %description -l pl static
 Biblioteka statyczna HERMES.
