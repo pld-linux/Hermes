@@ -85,7 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%ghost %{_libdir}/libHermes.so.1
 
 %files devel
 %defattr(644,root,root,755)
