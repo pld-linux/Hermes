@@ -6,6 +6,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.clanlib.org/~sphair/download/hermes/1.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	7dd49507a822b252ea8e3be8d0278d33
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-automake.patch
 URL:		http://www.clanlib.org/hermes/
