@@ -2,9 +2,11 @@ Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
 Version:	1.3.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	http://dark.x.dtu.dk/~mbn/clanlib/download/%{name}-%{version}.tar.gz
@@ -35,6 +37,7 @@ skalowanie i czê¶ciowo dithering.
 Summary:	HERMES header files and docementation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do biblioteki HERMES
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name} = %{version}
@@ -51,6 +54,7 @@ u¿ywaj±cych biblioteki HERMES.
 Summary:	HERMES static library
 Summary(pl):	Biblioteka statyczna HERMES
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -70,7 +74,7 @@ Biblioteka statyczna HERMES.
 libtoolize --copy --force
 aclocal
 autoconf
-automake -a
+automake -a -c
 %configure
 %{__make}
 
