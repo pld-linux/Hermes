@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://dark.x.dtu.dk/~mbn/clanlib/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-automake.patch
+Patch2:		%{name}-libtool.patch
 URL:		http://hermes.terminal.at/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -59,6 +60,7 @@ Biblioteka statyczna HERMES.
 %setup  -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
