@@ -75,7 +75,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 make prefix="$RPM_BUILD_ROOT/usr" install-strip
 
-strip $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
+strip $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf AUTHORS CHANGES TODO TODO.conversion
 
@@ -87,18 +87,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) /usr/lib/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %doc *gz docs/api
 /usr/include/Hermes
-%attr(755,root,root) /usr/lib/lib*.so
-%attr(755,root,root) /usr/lib/libHermes.la
+%attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/libHermes.la
 
 %files static
 %defattr(644,root,root,755)
-/usr/lib/lib*.a
+%{_libdir}/lib*.a
 
 %changelog
 * Tue Apr 20 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
