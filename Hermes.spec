@@ -7,7 +7,7 @@ License:	LGPL
 Group:		Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Biblioteki
-Source:		http://dark.x.dtu.dk/~mbn/clanlib/download/%{name}-%{version}.tar.gz
+Source0:	http://dark.x.dtu.dk/~mbn/clanlib/download/%{name}-%{version}.tar.gz
 Patch0:		Hermes-DESTDIR.patch
 Patch1:		Hermes-automake.patch
 URL:		http://hermes.terminal.at/
@@ -19,16 +19,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 HERMES is a library designed to convert a source buffer with a specified
 pixel format to a destination buffer with possibly a different format at
-the maximum possible speed.  On x86 and MMX architectures, handwritten
-assembler routines are taking over the job and doing it lightning fast.  On
+the maximum possible speed. On x86 and MMX architectures, handwritten
+assembler routines are taking over the job and doing it lightning fast. On
 top of that, HERMES provides fast surface clearing, stretching and some
 dithering.
 
 %description -l pl
 HERMES jest bibliotek± do konwersji miêdzy ró¿nymi formatami buforów pixeli
-z maksymaln± mo¿liw± szybkosci±.  Na procesorach x86 z architektur± MMX
-wstawki assemblerowe umo¿liwiaj± bibliotece du¿± szybko¶æ dzia³ania.
-HERMES umo¿liwia wype³nianie powierzchni, skalowanie i czê¶ciowo dithering.
+z maksymaln± mo¿liw± szybkosci±. Na procesorach x86 z architektur± MMX
+wstawki assemblerowe umo¿liwiaj± bibliotece du¿± szybko¶æ dzia³ania. HERMES
+umo¿liwia wype³nianie powierzchni, skalowanie i czê¶ciowo dithering.
 
 %package devel
 Summary:	HERMES header files and docementation
