@@ -82,6 +82,7 @@ Biblioteka statyczna HERMES.
 %patch1 -p1
 
 %build
+rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
