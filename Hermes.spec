@@ -2,7 +2,7 @@ Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
 Version:	1.3.3
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.clanlib.org/~sphair/download/hermes/1.3/%{name}-%{version}.tar.bz2
