@@ -100,21 +100,3 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
-
-%changelog
-* Fri Jun  4 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.2.5-1]
-- added -g to CFLAGS (static librariest must be with debug info).
-
-* Tue Apr 20 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.2.4-2]
-- added - q %setup parameter,
-- added devel and static subpackages,
-- changed Group for main package,
-- gzipping %doc,
-- added "rm -rf $RPM_BUILD_ROOT" on top %install,
-- added stripping shared libraries.
-
-* Mon Apr 19 1999 Konrad Stepieñ <kornad@interdata.com.pl>
-  [1.2.4-1]
-- initial version
