@@ -1,8 +1,8 @@
 Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji formatów pixeli
 Name:		Hermes
-Version:	1.2.5
-Release:	2
+Version:	1.2.6
+Release:	1
 Copyright:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
