@@ -1,7 +1,7 @@
 Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	LGPL
 Group:		Libraries
@@ -81,7 +81,7 @@ make install-strip DESTDIR=$RPM_BUILD_ROOT
 
 strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
-gzip -9nf AUTHORS CHANGES TODO TODO.conversion
+gzip -9nf AUTHORS ChangeLog TODO TODO.conversion README FAQ
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
