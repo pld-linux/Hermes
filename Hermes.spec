@@ -2,13 +2,13 @@ Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji formatów pixeli
 Name:		Hermes
 Version:	1.2.4
-Release:	1
+Release:	2
 Copyright:	LGPL
-Group:		Development/Libraries
-Group(pl):	Programowanie/Biblioteki
+Group:		Libraries
+Group(pl):	Biblioteki
 Source:		http://hermes.terminal.at/Hermes-%{version}.tar.gz
+URL:		http://hermes.terminal.at/
 BuildRoot:	/tmp/%{name}-%{version}-root
-URL:		http://hermes.terminal.at
 
 %description
 HERMES is a library designed to convert a source buffer with a specified 
@@ -35,36 +35,82 @@ HERMES mo¿e dzia³aæ na wszystkich platformach na które dostêpny jest
 kompilator ANSI C, w tej chwili kod dostêpny jest dla DOS, Win32, Linux
 FreeBSD.
 
+%package devel
+Summary:	HERMES header files and docementation
+Summary(pl):	Pliki nag³ówkowe i dokumentacja do biblioteki HERMES
+Group:		Development/Libraries
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
+
+%description devel
+Header files and docementation for develp applications using HERMES library.
+
+%description -l pl devel
+Pliki nag³ówkowe i dokumentacja potrzebne przy tworzeniu aplikacji
+u¿ywaj±cych biblioteki HERMES.
+
+%package static
+Summary:	HERMES satic library
+Summary(pl):	Biblioteka statyczna HERMES
+Group:		Development/Libraries
+Group(pl):	Programowanie/Biblioteki
+Requires:	%{name}-devel = %{version}
+
+%description static
+HERMES satic library.
+
+%description -l pl static
+Biblioteka statyczna HERMES.
+
 %prep
-%setup
+%setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr/
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
+./configure \
+	--prefix=/usr/
 make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 make prefix="$RPM_BUILD_ROOT/usr" install-strip
+
+strip $RPM_BUILD_ROOT/usr/lib/lib*.so.*.*
+
+gzip -9nf AUTHORS CHANGES TODO TODO.conversion
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-/sbin/ldconfig
-
-%postun
-/sbin/ldconfig
-
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGES TODO TODO.conversion docs/api
 /usr/lib/libHermes.a
-%attr(755,root,root) /usr/lib/libHermes.la
-%attr(755,root,root) /usr/lib/libHermes.so.1.0.1
-%attr(755,root,root) /usr/lib/libHermes.so.1
-%attr(755,root,root) /usr/lib/libHermes.so
+%attr(755,root,root) /usr/lib/lib*.so.*.*
+
+%files devel
+%defattr(644,root,root,755)
+%doc *gz docs/api
 /usr/include/Hermes
+%attr(755,root,root) /usr/lib/lib*.so
+%attr(755,root,root) /usr/lib/libHermes.la
+
+%files static
+%defattr(644,root,root,755)
+/usr/lib/lib*.a
 
 %changelog
+* Tue Apr 20 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.2.4-2]
+- added - q %setup parameter,
+- added devel and static subpackages,
+- changed Group for main package,
+- gzipping %doc,
+- added "rm -rf $RPM_BUILD_ROOT" on top %install,
+- added stripping shared libraries.
 
 * Mon Apr 19 1999 Konrad Stepieñ <kornad@interdata.com.pl>
+  [1.2.4-1]
 - initial version
