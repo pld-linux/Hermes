@@ -1,8 +1,8 @@
 Summary:	HERMES pixel format conversion library
 Summary(pl):	HERMES - biblioteka konwersji formatów pixeli
 Name:		Hermes
-Version:	1.2.4
-Release:	2
+Version:	1.2.5
+Release:	1
 Copyright:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
@@ -68,12 +68,12 @@ Biblioteka statyczna HERMES.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target} \
-	--prefix=/usr/
+	--prefix=%{_prefix}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix="$RPM_BUILD_ROOT/usr" install-strip
+make prefix="$RPM_BUILD_ROOT%{_prefix}" install-strip
 
 strip $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
