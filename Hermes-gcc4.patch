@@ -1,0 +1,39 @@
+--- Hermes-1.3.3/src/HeadMMX.h	2000-12-06 05:55:28.000000000 +0100
++++ Hermes-1.3.3.patched/src/HeadMMX.h	2005-06-16 12:47:17.000000000 +0200
+@@ -56,6 +56,7 @@
+   extern "C" {   
+   #endif
+ 
++#if 0
+   void ConvertMMX(HermesConverterInterface *) __attribute__ ((alias ("_ConvertMMX")));
+   void ClearMMX_32(HermesClearInterface *) __attribute__ ((alias ("_ClearMMX_32")));
+   void ClearMMX_24(HermesClearInterface *)  __attribute__ ((alias ("_ClearMMX_24")));
+@@ -70,6 +71,8 @@
+   void ConvertMMXpII32_16RGB555() __attribute__ ((alias ("_ConvertMMXpII32_16RGB555")));
+   void ConvertMMXpII32_16BGR555() __attribute__ ((alias ("_ConvertMMXpII32_16BGR555")));
+ 
++#endif
++
+   #ifdef __cplusplus
+   }
+   #endif
+--- Hermes-1.3.3/src/HeadX86.h	2000-12-06 05:55:28.000000000 +0100
++++ Hermes-1.3.3.patched/src/HeadX86.h	2005-06-16 12:47:37.000000000 +0200
+@@ -88,6 +88,7 @@
+   extern "C" {
+   #endif
+ 
++#if 0
+   int Hermes_X86_CPU() __attribute__ ((alias ("_Hermes_X86_CPU")));
+ 
+   void ConvertX86(HermesConverterInterface *) __attribute__ ((alias ("_ConvertX86")));
+@@ -137,6 +138,8 @@
+   extern int32 ConvertX86p16_32RGBA888_LUT_X86[512] __attribute__ ((alias ("_ConvertX86p16_32RGBA888_LUT_X86")));
+   extern int32 ConvertX86p16_32BGRA888_LUT_X86[512] __attribute__ ((alias ("_ConvertX86p16_32BGRA888_LUT_X86")));
+ 
++#endif
++
+   #ifdef __cplusplus
+   }
+   #endif
+
