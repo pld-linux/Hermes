@@ -35,7 +35,7 @@ skalowanie i czê¶ciowo dithering.
 Summary:	HERMES header files and documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do biblioteki HERMES
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files and documentation for developing applications using
@@ -49,7 +49,7 @@ u¿ywaj±cych biblioteki HERMES.
 Summary:	HERMES static library
 Summary(pl):	Biblioteka statyczna HERMES
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 HERMES static library.
