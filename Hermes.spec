@@ -1,5 +1,5 @@
 Summary:	HERMES pixel format conversion library
-Summary(pl.UTF-8):   HERMES - biblioteka konwersji grafiki rastrowej
+Summary(pl.UTF-8):	HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
 Version:	1.3.3
 Release:	2
@@ -33,7 +33,7 @@ skalowanie i częściowo dithering.
 
 %package devel
 Summary:	HERMES header files and documentation
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do biblioteki HERMES
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do biblioteki HERMES
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -47,7 +47,7 @@ używających biblioteki HERMES.
 
 %package static
 Summary:	HERMES static library
-Summary(pl.UTF-8):   Biblioteka statyczna HERMES
+Summary(pl.UTF-8):	Biblioteka statyczna HERMES
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
