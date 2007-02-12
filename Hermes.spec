@@ -1,5 +1,5 @@
 Summary:	HERMES pixel format conversion library
-Summary(pl):	HERMES - biblioteka konwersji grafiki rastrowej
+Summary(pl.UTF-8):   HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
 Version:	1.3.3
 Release:	2
@@ -24,16 +24,16 @@ architectures, handwritten assembler routines are taking over the job
 and doing it lightning fast. On top of that, HERMES provides fast
 surface clearing, stretching and some dithering.
 
-%description -l pl
-HERMES jest bibliotek± do konwersji miêdzy ró¿nymi formatami buforów
-pikseli z maksymaln± mo¿liw± szybko¶ci±. Na procesorach x86 z
-architektur± MMX wstawki asemblerowe umo¿liwiaj± bibliotece du¿±
-szybko¶æ dzia³ania. HERMES umo¿liwia wype³nianie powierzchni,
-skalowanie i czê¶ciowo dithering.
+%description -l pl.UTF-8
+HERMES jest bibliotekÄ… do konwersji miÄ™dzy rÃ³Å¼nymi formatami buforÃ³w
+pikseli z maksymalnÄ… moÅ¼liwÄ… szybkoÅ›ciÄ…. Na procesorach x86 z
+architekturÄ… MMX wstawki asemblerowe umoÅ¼liwiajÄ… bibliotece duÅ¼Ä…
+szybkoÅ›Ä‡ dziaÅ‚ania. HERMES umoÅ¼liwia wypeÅ‚nianie powierzchni,
+skalowanie i czÄ™Å›ciowo dithering.
 
 %package devel
 Summary:	HERMES header files and documentation
-Summary(pl):	Pliki nag³ówkowe i dokumentacja do biblioteki HERMES
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja do biblioteki HERMES
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -41,20 +41,20 @@ Requires:	%{name} = %{version}-%{release}
 Header files and documentation for developing applications using
 HERMES library.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja potrzebne przy tworzeniu aplikacji
-u¿ywaj±cych biblioteki HERMES.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja potrzebne przy tworzeniu aplikacji
+uÅ¼ywajÄ…cych biblioteki HERMES.
 
 %package static
 Summary:	HERMES static library
-Summary(pl):	Biblioteka statyczna HERMES
+Summary(pl.UTF-8):   Biblioteka statyczna HERMES
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 HERMES static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna HERMES.
 
 %prep
