@@ -1,0 +1,4 @@
+- release 2,
+- spec adapterized,
+- fix: s/automake -a/automake -a -c/ in %install for allow build in
+  automake > 1.4 environment.
