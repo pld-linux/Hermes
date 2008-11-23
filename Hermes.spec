@@ -2,7 +2,7 @@ Summary:	HERMES pixel format conversion library
 Summary(pl.UTF-8):	HERMES - biblioteka konwersji grafiki rastrowej
 Name:		Hermes
 Version:	1.3.3
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.clanlib.org/~sphair/download/hermes/1.3/%{name}-%{version}.tar.bz2
@@ -10,6 +10,7 @@ Source0:	http://www.clanlib.org/~sphair/download/hermes/1.3/%{name}-%{version}.t
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-automake.patch
 Patch2:		%{name}-gcc4.patch
+Patch3:		%{name}-configure.patch
 URL:		http://www.clanlib.org/hermes/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -62,12 +63,14 @@ Biblioteka statyczna HERMES.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
@@ -87,15 +90,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog FAQ NEWS README TODO*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libHermes.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libHermes.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %doc docs/api
+%attr(755,root,root) %{_libdir}/libHermes.so
+%{_libdir}/libHermes.la
 %{_includedir}/Hermes
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libHermes.a
